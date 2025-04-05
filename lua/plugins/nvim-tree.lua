@@ -5,6 +5,7 @@ return {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
+	-- TODO: hello
 	config = function()
 		require("nvim-tree").setup({
 			renderer = {
@@ -31,14 +32,16 @@ return {
 					".gitignore",
 				},
 			},
+
+			ui = {
+				confirm = {
+					default_yes = true,
+				},
+			},
 		})
 
-		vim.keymap.set(
-			"n",
-			"<leader>e",
-			":NvimTreeToggle<CR>",
-			{ noremap = true, silent = true },
-			{ desc = "Open Explorer" }
-		)
+		vim.keymap.set("n", "<leader>e", function()
+			require("nvim-tree.api").tree.toggle()
+		end, { desc = "Open Explorer" })
 	end,
 }
