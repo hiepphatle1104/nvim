@@ -9,3 +9,6 @@ require("config.autocmds")
 
 -- mappings
 require("config.mappings")
+
+-- lsp
+require("config.lsp")
