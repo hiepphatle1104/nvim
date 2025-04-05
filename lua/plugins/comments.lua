@@ -8,6 +8,7 @@ return {
 
 	{
 		"folke/todo-comments.nvim",
+		cmd = { "TodoTrouble", "TodoTelescope" },
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("todo-comments").setup({
@@ -16,8 +17,24 @@ return {
 					keyword = "fg",
 				},
 			})
-
-			vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", { noremap = true, silent = true })
 		end,
+		keys = {
+			{
+				"]t",
+				function()
+					require("todo-comments").jump_next()
+				end,
+				desc = "Next Todo Comment",
+			},
+			{
+				"[t",
+				function()
+					require("todo-comments").jump_prev()
+				end,
+				desc = "Previous Todo Comment",
+			},
+			{ "<leader>tt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (Trouble)" },
+			{ "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Todo" },
+		},
 	},
 }
