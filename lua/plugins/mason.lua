@@ -11,8 +11,6 @@ return {
 					"prettier",
 					"gofumpt",
 					"goimports",
-					"jq",
-					"codespell",
 				},
 			})
 		end,
