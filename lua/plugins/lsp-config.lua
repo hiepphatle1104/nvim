@@ -17,8 +17,14 @@ end
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = { "saghen/blink.cmp", "williamboman/mason-lspconfig.nvim" },
+
+	ensure_installed = { "lua_ls", "gopls", "ts_ls", "jdtls", "groovyls", "pyright" },
 	opts = {
 		servers = {
+			ts_ls = {},
+			jdtls = {},
+			groovyls = {},
+			pyright = {},
 			gopls = {
 				settings = {
 					cmd = { "gopls" },
