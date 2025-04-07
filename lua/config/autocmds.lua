@@ -32,22 +32,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		})
 	end,
 })
-
--- Close Previous Buffer
-local last_buf = nil
-vim.api.nvim_create_autocmd("BufEnter", {
-	callback = function()
-		local current = vim.api.nvim_get_current_buf()
-
-		if last_buf and vim.api.nvim_buf_is_valid(last_buf) and last_buf ~= current then
-			local bt = vim.api.nvim_buf_get_option(last_buf, "buftype")
-			local ft = vim.api.nvim_buf_get_option(last_buf, "filetype")
-
-			if bt == "" and ft ~= "NvimTree" then
-				vim.cmd("bd " .. last_buf)
-			end
-		end
-
-		last_buf = current
-	end,
-})

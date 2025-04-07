@@ -9,7 +9,6 @@ return {
 	config = function()
 		require("nvim-tree").setup({
 			renderer = {
-				highlight_opened_files = "name",
 				root_folder_label = false,
 			},
 
@@ -40,8 +39,6 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>e", function()
-			require("nvim-tree.api").tree.toggle()
-		end, { desc = "Open Explorer" })
+		vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Open Explorer" })
 	end,
 }
