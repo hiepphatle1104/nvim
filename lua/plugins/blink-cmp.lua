@@ -48,7 +48,8 @@ return {
 				},
 			},
 			signature = { enabled = true },
-			keymap = { preset = "enter" },
+			keymap = { preset = "enter", ["<C-k>"] = {} },
+
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer" },
 				providers = {},

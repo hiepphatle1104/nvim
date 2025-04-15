@@ -18,9 +18,11 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = { "saghen/blink.cmp", "williamboman/mason-lspconfig.nvim" },
 
-	ensure_installed = { "lua_ls", "gopls", "ts_ls", "jdtls", "groovyls", "pyright" },
+	ensure_installed = { "lua_ls", "gopls", "ts_ls", "jdtls", "groovyls", "pyright", "buf_ls", "jsonls" },
 	opts = {
 		servers = {
+			jsonls = {},
+			buf_ls = {},
 			ts_ls = {},
 			jdtls = {},
 			groovyls = {},

@@ -6,11 +6,12 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "black", "isort" },
-				javascript = { "prettierd", "prettier", stop_after_first = true },
+				javascript = { "prettierd", "prettier" },
 				go = { "gofumpt", "goimports" },
-				json = { "prettierd", "prettier", stop_after_first = true },
-				markdown = { "prettierd", "prettier", stop_after_first = true },
+				json = { "prettierd", "prettier" },
+				markdown = { "prettierd", "prettier" },
 				groovy = { "groovyls" },
+				proto = { "buf" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
