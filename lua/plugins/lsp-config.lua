@@ -33,7 +33,6 @@ return {
           filetypes = { "go", "gomod", "gowork", "gotmpl" },
           gopls = {
             completeUnimported = true,
-            usePlaceholders = true,
             analyses = {
               unusedparams = true,
             },
