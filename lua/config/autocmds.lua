@@ -32,3 +32,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     })
   end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "Makefile",
+  callback = function()
+    vim.bo.expandtab = false
+  end,
+})
